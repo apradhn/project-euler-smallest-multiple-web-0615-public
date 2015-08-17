@@ -5,17 +5,18 @@ class SmallestMultiple
   end
 
   def lcm
-    m = 1
-    answer = 0
-    loop do 
-      multiple = num * m
-      if (1..num).to_a.all? {|n| multiple % n == 0}
-        answer = multiple
-        break
-      end
-      m = m + 1
+  m = 1
+  answer = 0
+  multiple = num * num - 1 * num - 2
+  loop do 
+    if (num / 2..num).to_a.all? {|n| multiple % n == 0}
+      answer = multiple
+      break
     end
-    answer    
+    m = m + 1
+    multiple = num * m
+  end
+  answer 
   end
   
 end
